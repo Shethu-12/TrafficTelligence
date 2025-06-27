@@ -128,5 +128,22 @@ print(f"MSE  (Mean Squared Error):       {mse:.2f}")
 print(f"RMSE (Root Mean Squared Error):  {rmse:.2f}")
 print(f"R2 Score:                        {r2:.4f}")
 
+from sklearn.model_selection import RandomizedSearchCV
+
+param_grid = {
+    'n_estimators': [100, 200],
+    'max_depth': [10, None],
+    'min_samples_split': [2, 5]
+}
+
+rf = ensemble.RandomForestRegressor(random_state=42)
+
+rf_search = RandomizedSearchCV(rf, param_distributions=param_grid,
+                               n_iter=6, cv=3, n_jobs=-1, verbose=1)
+
+rf_search.fit(x_train, y_train)
+print("Best params:", rf_search.best_params_)
+
+
 pickle.dump(Rforest,open('model.pkl','wb'))
 
