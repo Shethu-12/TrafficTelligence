@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result - TrafficTelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #c9e4f6, #fdfbfb);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: #1e2a38;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: #f4f4f4;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #4dc0b5;
+        }
+
+        .result-box {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+            animation: popUp 0.9s ease-out forwards;
+            opacity: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #1e2a38;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.6rem;
+            color: #333;
+        }
+
+        @keyframes popUp {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .btn-back {
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background-color: #4dc0b5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-back:hover {
+            background-color: #38a89d;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/inspect">Predict</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="result-box">
+        <h1>Traffic Volume Prediction</h1>
+        <p>{{ prediction_text }}</p>
+        <a class="btn-back" href="/inspect">Make Another Prediction</a>
+    </div>
+</body>
+</html>

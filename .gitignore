@@ -1,0 +1,12 @@
+# Python bytecode
+_pycache_/
+*.pyc
+
+
+
+# VS Code
+.vscode/
+
+# Model files
+*.pkl
+

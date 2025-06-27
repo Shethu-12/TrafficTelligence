@@ -1,0 +1,233 @@
+ <!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - TrafficTelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.2s; }
+        .fade-in:nth-child(2) { animation-delay: 0.4s; }
+        .fade-in:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h2 {
+            color: #333;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        nav a.active {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about" class="active">About</a>
+        <a href="/inspect">Predict</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="section fade-in">
+            <h1>About TrafficTelligence</h1>
+            <p>
+                TrafficTelligence is a smart, ML-powered web app designed to predict traffic volume using weather data, time, and holiday factors.
+                It empowers city planners, researchers, and everyday commuters with intelligent insights for proactive traffic management.
+            </p>
+        </div>
+
+        < Project Flow 
+        <div class="section fade-in">
+            <h2>Project Flow</h2>
+            <ul>
+                <li><strong>Step 1:</strong> User inputs data through a friendly UI.</li>
+                <li><strong>Step 2:</strong> The trained ML model analyzes the data in real time.</li>
+                <li><strong>Step 3:</strong> Prediction is displayed instantly on the screen.</li>
+            </ul>
+        </div>
+ Section 3: 
+        <div class="section fade-in">
+            <h2>Tasks Completed</h2>
+            <ul>
+                <li><strong>1. Data Collection</strong> – Load and inspect the traffic dataset.</li>
+                <li><strong>2. Data Pre-processing</strong>
+                    <ul>
+                        <li>Import necessary libraries</li>
+                        <li>Check and handle missing values</li>
+                        <li>Feature scaling</li>
+                        <li>Split into training and testing sets</li>
+                    </ul>
+                </li>
+                <li><strong>3. Model Building</strong>
+                    <ul>
+                        <li>Initialize and train models</li>
+                        <li>Evaluate performance (R², RMSE)</li>
+                        <li>Save the best model using pickle</li>
+                    </ul>
+                </li>
+                <li><strong>4. Application Building</strong>
+                    <ul>
+                        <li>Design interactive HTML form</li>
+                        <li>Create Flask backend for predictions</li>
+                        <li>Run and test the application</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+Section 1: About the Project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - TrafficTelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f0f4f8;
+        }
+
+        nav {
+            background-color: #1e2a38;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 1.5rem;
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #4dc0b5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .section {
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            animation: slideFadeIn 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .section:nth-child(1) { background: #ffffff; animation-delay: 0.2s; }
+        .section:nth-child(2) { background: #e6f2ff; animation-delay: 0.4s; }
+        .section:nth-child(3) { background: #f7f7f7; animation-delay: 0.6s; }
+
+        .section h1,
+        .section h2 {
+            color: #1e2a38;
+            margin-bottom: 1rem;
+            animation: fadeInText 0.8s ease-in forwards;
+        }
+
+        ul {
+            line-height: 1.7;
+            padding-left: 1.5rem;
+        }
+
+        @keyframes slideFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about" class="active">About</a>
+        <a href="/inspect">Predict</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- Section 1 -->
+        <div class="section">
+            <h1>About TrafficTelligence</h1>
+            <p>
+                TrafficTelligence is a smart, ML-powered web app that predicts traffic volume based on weather conditions,
+                time, and holidays. It's built to assist city planners, researchers, and everyday commuters in managing and predicting traffic trends efficiently.
+            </p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <h2>Project Flow</h2>
+            <ul>
+                <li><strong>User Input:</strong> Users submit data through the interface.</li>
+                <li><strong>Model Analysis:</strong> Inputs are passed to a trained machine learning model.</li>
+                <li><strong>Prediction:</strong> The model returns predicted traffic volume, displayed in real-time.</li>
+            </ul>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <h2>Steps We Followed</h2>
+            <ul>
+                <li><strong>Data Collection:</strong> Load or create relevant datasets.</li>
+                <li><strong>Pre-processing:</strong> Clean, scale, and visualize the data.</li>
+                <li><strong>Model Building:</strong> Train, test, and evaluate the model (Random Forest, etc.).</li>
+                <li><strong>Application Development:</strong> Build Flask backend and HTML UI for prediction.</li>
+                <li><strong>Deployment:</strong> Integrate model into web app with responsive user interaction.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

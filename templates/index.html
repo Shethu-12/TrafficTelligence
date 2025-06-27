@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrafficTelligence | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="index">
+    <nav>
+        <a href="/" class="active">Home</a>
+        <a href="/about">About</a>
+        <a href="/inspect">Predict</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-section" style="text-align:center; padding: 4rem 2rem; background: linear-gradient(to right, #e3f2fd, #ffffff);">
+        <h1 style="font-size: 3rem; color: #2a2a2a; margin-bottom: 1rem;">Welcome to <span style="color: #4a90e2;">TrafficTelligence</span></h1>
+        <p style="font-size: 1.2rem; color: #555;">Advanced Traffic Volume Estimation with Machine Learning</p>
+        <a href="/inspect" class="back-button" style="margin-top: 2rem; display: inline-block;">Start Predicting</a>
+    </header>
+
+    <!-- OVERVIEW SECTION -->
+    <section class="overview-section container">
+        <h2>About the Project</h2>
+        <p style="text-align:center;">
+            TrafficTelligence uses machine learning to predict traffic volume with precision, leveraging data like weather, events, and historical traffic. It enables smarter traffic control, informed urban planning, and better commuter routing.
+        </p>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="use-cases container" style="margin-top: 2rem;">
+        <h2>Key Use Cases</h2>
+        <div class="card-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem;">
+            <div class="card" style="background: #ffffff; border-radius: 16px; padding: 1.5rem; flex: 1 1 250px; max-width: 300px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease;">
+                <h3 style="color: #4a90e2;">Dynamic Traffic Management</h3>
+                <p>Authorities can use real-time predictions to adjust signal timings and optimize lanes for smoother traffic flow.</p>
+            </div>
+            <div class="card" style="background: #ffffff; border-radius: 16px; padding: 1.5rem; flex: 1 1 250px; max-width: 300px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease;">
+                <h3 style="color: #4a90e2;">Urban Planning</h3>
+                <p>Helps city planners design road networks and public transport systems based on predicted future traffic loads.</p>
+            </div>
+            <div class="card" style="background: #ffffff; border-radius: 16px; padding: 1.5rem; flex: 1 1 250px; max-width: 300px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease;">
+                <h3 style="color: #4a90e2;">Commuter Guidance</h3>
+                <p>Navigation apps and users can plan routes better by avoiding congested areas and travel during optimal times.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Optional subtle hover animation
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseover', () => card.style.transform = 'translateY(-5px)');
+            card.addEventListener('mouseout', () => card.style.transform = 'translateY(0)');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - TrafficTelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f1f5f9;
+        }
+
+        nav {
+            background-color: #1e2a38;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 1.5rem;
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a.active {
+            color: #4dc0b5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: linear-gradient(to right, #e3f2fd, #ffffff);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        h1 {
+            color: #1e2a38;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        button {
+            background-color: #4dc0b5;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #38a89d;
+        }
+
+        .info p {
+            margin: 0.5rem 0;
+        }
+
+        .info a {
+            color: #1e2a38;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="contact">
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/inspect">Predict</a>
+        <a href="/contact" class="active">Contact</a>
+    </nav>
+
+    <div class="container section">
+        <h1>Contact Us</h1>
+
+        
+
+        <form action="/contact" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message or Feedback" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
